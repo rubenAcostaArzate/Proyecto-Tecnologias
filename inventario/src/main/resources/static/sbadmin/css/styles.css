@@ -1,0 +1,177 @@
+.fuente-cursiva {
+    font-family: 'Brush Script MT',cursive;
+}
+
+thead {
+    background-color:#5CBF69 ;
+}
+
+h1{
+    text-align: center;
+}
+
+.primera-receta,
+.segunda-receta {
+    width: 50%;
+    transition: transform .3s;
+}
+
+.primera-receta:hover,
+.segunda-receta:hover {
+    transform: scale(1.1);
+}
+
+.primera-receta{
+    background-color: #F4C774;
+}
+
+.segunda-receta{
+    background-color: #B1E1B7;
+}
+
+.ingredientes{
+    background-color: #C8C5C0;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 20px;
+    color:gray;
+}
+
+.recetas{
+    background-color: #C8C5C0;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: gray;
+    font-size: 18px;
+    height: 500px;    
+}
+
+.inventario{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
+
+.inventario-margen {
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+table{
+    border-bottom:lightgrey  1px solid;
+    border-left: lightgrey 1px solid;
+    border-right: lightgray 1px solid;
+}
+
+.boton-regresa{
+    margin-left: 25%;
+}
+
+.mb-3{
+    font-weight: bold;
+    font-size: large;
+}
+
+.subtitulos-formularios{
+    margin-left: 20%;
+}
+
+.agrega-archivo{
+    margin-top: 20px;
+    margin-left: 20%;
+}
+
+img{
+    margin-left: 35%;
+    margin-right: 35%;
+} 
+
+hr{
+    height: 5px;
+    background-color: black;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+textarea {
+    max-width: 60%;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    display: inline-block;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.receta-ingredientes{
+    margin-left: 15%;
+    margin-bottom: 50px;
+}
+
+.listado-ingredientes li {
+    margin-top: 10px;
+}
+
+.separacion {
+    margin: 0 auto;
+    height: 3px;
+    width: 80%;
+    background-color: gray;
+}
+
+.receta-pasos {
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+.receta-imagen {
+    display: flex;
+    justify-content: center;
+}
+
+.receta-boton {
+    margin-right: 15%;
+}
+
+.textarea-form {
+    max-width: 100%;
+    resize: none;
+}
+
+.boton-menu {
+    padding: 50px;
+    transition: transform .3s;
+}
+
+.boton-menu:hover {
+    transform: scale(1.1);
+}
+
+.boton-menu a {
+    font-size: 20px;
+}
+
+.boton-menu-1 {
+    background-color: #2B50AA;
+}
+
+.boton-menu-2 {
+    background-color: #2e8b57;
+}
+
+.boton-menu-3 {
+    background-color: #c7ae46;
+}
+
+.boton-menu-4 {
+    background-color: #C8C5C0;
+}
