@@ -59,12 +59,58 @@ public class Producto {
     @NotNull(message = "El nombre del proveedor es obligatorio")
     @Column(name = "nombre_proveedor")
     public String nombreProveedor;
-
+    
+  
     /** Descripcion del producto */
     @NotNull(message = "La descripcion es obligatoria")
     public String descripcion;
 
     /** Comentarios del producto */
     public String comentarios;
+
+    public String getComentarios() {
+        return comentarios;
+    }
+
+    public float getCosto() {
+        return costo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public LocalDate getFechaAdquision() {
+        return fechaAdquision;
+    }
+
+    public LocalDate getFechaCaducidad() {
+        return fechaCaducidad;
+    }
+
+    public long getIdProducto() {
+        return idProducto;
+    }
+
+    public String getMedida() {
+        return medida;
+    }
+
+    public String getNombreProducto() {
+        return nombreProducto;
+    }
+
+    public String getNombreProveedor() {
+        return nombreProveedor;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public String getTipoProducto() {
+        return tipoProducto;
+    }
+    
     
 }

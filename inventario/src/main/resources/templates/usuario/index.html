@@ -27,6 +27,7 @@
               <th scope="col">Apellido paterno</th>
               <th scope="col">Apellido materno</th>
               <th scope="col">Saldo</th>
+              <th scope="col">Correo</th>
               <th scope="col"></th>
               <th scope="col"></th>
             </tr>
@@ -38,6 +39,7 @@
               <td th:text="${usuario.aPaterno}"></td>
               <td th:text="${usuario.aMaterno}"></td>
               <td th:text="${usuario.saldo}"></td>
+              <td th:text="${usuario.correo}"></td>
               <td>
                 <a class="btn btn-primary" th:href="@{/usuario/formularioEditarUsuario/{id}(id=${usuario.id_usuario})}">Editar usuario</a>
               </td>

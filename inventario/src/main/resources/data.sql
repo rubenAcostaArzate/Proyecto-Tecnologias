@@ -4,7 +4,8 @@ CREATE TABLE IF NOT EXISTS Usuario(
     curp VARCHAR(20) NOT NULL,
     a_paterno VARCHAR(50) NOT NULL,
     a_materno VARCHAR(50) NOT NULL,
-    saldo FLOAT NOT NULL
+    saldo FLOAT NOT NULL,
+    correo VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Producto
@@ -20,4 +21,5 @@ CREATE TABLE IF NOT EXISTS Producto
     nombre_proveedor VARCHAR(100) NOT NULL,
     descripcion VARCHAR(100) NOT NULL,
     comentarios VARCHAR(100)
+    
 );

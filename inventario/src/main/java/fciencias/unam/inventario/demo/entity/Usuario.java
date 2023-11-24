@@ -1,12 +1,16 @@
 package fciencias.unam.inventario.demo.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.*;
 
 
-
+@Getter
+@Setter
 @Data
 @Entity
 public class Usuario {
@@ -41,6 +45,12 @@ public class Usuario {
     @Column(name = "saldo")
     @Min(0)
     public double saldo;
+    
+    @Valid
+    @NotNull(message = "El nombre del correo es obligatorio")
+    @Column(name = "correo")
+    public String correo;
+
 
     public String getNombre() {
         return nombre;
@@ -82,6 +92,11 @@ public class Usuario {
         this.saldo = saldo;
     }
 
+    public String getCorreo(){
+        return correo;
+    }
+    
+    
 
 
 }

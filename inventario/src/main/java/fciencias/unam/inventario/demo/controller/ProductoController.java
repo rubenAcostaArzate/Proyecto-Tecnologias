@@ -79,6 +79,7 @@ public class ProductoController {
 
        
         if (result.hasErrors()) {
+            result.getAllErrors();
             return "producto/formularioEditarIngrediente";
         }else if (ingrediente.getFechaAdquision().isAfter(ingrediente.getFechaCaducidad())) {
             System.out.println("La fecha adquisiscion no puede ser despues que fecha caducidad");
@@ -101,6 +102,8 @@ public class ProductoController {
         repo.save(ingredienteActual);
         return "redirect:/inventario/";
     }
+    
+    
 
     @ModelAttribute("opcionesTipo")
     public List<String> getOpcionesTipo() {
