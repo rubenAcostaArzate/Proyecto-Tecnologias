@@ -6,6 +6,7 @@ import lombok.Setter;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Email;
 import jakarta.persistence.*;
 
 
@@ -47,6 +48,7 @@ public class Usuario {
     public double saldo;
     
     @Valid
+    @Email
     @NotNull(message = "El nombre del correo es obligatorio")
     @Column(name = "correo")
     public String correo;

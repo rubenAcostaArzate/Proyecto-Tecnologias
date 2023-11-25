@@ -64,11 +64,13 @@
                 <label for="fecha" class="form-label">Fecha de Adquisión</label>
                 <input type="date" class="form-control" id="fecha" value="2023-11-13" required
                 th:field="*{fechaAdquision}">
+                <span class="text-danger" th:if="${#fields.hasErrors('fechaAdquision')}" th:errors="*{fechaAdquision}">Name Error</span>
             </div>
             <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha de Caducidad</label>
                 <input type="date" class="form-control" id="fecha" value="2023-11-13" required
                 th:field="*{fechaCaducidad}">
+                <span class="text-danger" th:if="${#fields.hasErrors('fechaCaducidad')}" th:errors="*{fechaCaducidad}">Name Error</span>
             </div>
             <div class="mb-3">
                 <label for="nombreProveedor" class="form-label">Nombre del proveedor</label>

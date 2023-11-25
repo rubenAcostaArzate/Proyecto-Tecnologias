@@ -1,5 +1,6 @@
 package fciencias.unam.inventario.demo.entity;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
@@ -44,12 +45,14 @@ public class Producto {
     public float costo;
 
     /** Fecha de Adquision del producto */
+    @Valid
     @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fecha_adquision")
     public LocalDate fechaAdquision;
 
     /** Fecha de Caducidad del producto */
+    @Valid
     @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "fecha_caducidad")

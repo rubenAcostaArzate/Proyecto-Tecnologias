@@ -46,9 +46,6 @@ public class ProductoController {
         if (result.hasErrors()) {
             System.out.println(result.getAllErrors());
             return "producto/formularioAgregarIngrediente";
-        }else if (ingrediente.getFechaAdquision().isAfter(ingrediente.getFechaCaducidad())) {
-            System.out.println("La fecha adquisiscion no puede ser despues que fecha caducidad");
-            return "producto/formularioAgregarIngrediente";
         }
 
         repo.save(ingrediente);
@@ -81,9 +78,6 @@ public class ProductoController {
         if (result.hasErrors()) {
             result.getAllErrors();
             return "producto/formularioEditarIngrediente";
-        }else if (ingrediente.getFechaAdquision().isAfter(ingrediente.getFechaCaducidad())) {
-            System.out.println("La fecha adquisiscion no puede ser despues que fecha caducidad");
-            return "producto/formularioAgregarIngrediente";
         }
 
         // Actualizando los datos

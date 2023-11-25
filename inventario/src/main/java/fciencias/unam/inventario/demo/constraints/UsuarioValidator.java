@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 import fciencias.unam.inventario.demo.entity.Usuario;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import fciencias.unam.inventario.demo.constraints.UsuarioConstraint;
 
 public class UsuarioValidator implements ConstraintValidator<UsuarioConstraint,Usuario>{
 
@@ -21,8 +20,7 @@ public class UsuarioValidator implements ConstraintValidator<UsuarioConstraint,U
     public boolean isValid(Usuario usuario, ConstraintValidatorContext constraintValidatorContext) {
      Matcher mather = pattern.matcher(usuario.getCorreo());
 
-        return usuario != null
-               && mather.find();
+        return usuario != null && mather.find();
         
     }
 }

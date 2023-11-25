@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Data;
+
 
 @Embeddable
 public class Mail {
