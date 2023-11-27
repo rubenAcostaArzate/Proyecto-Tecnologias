@@ -15,7 +15,7 @@ public class JEmailService {
 
     public void sendEmail(String toUser, String subject, String message){
      SimpleMailMessage mailMessage=new SimpleMailMessage();
-     mailMessage.setFrom("rubenacostaarzate@ciencias.unam.mx");
+     mailMessage.setFrom("botjavatest@outlook.com");
      mailMessage.setTo(toUser);
      mailMessage.setSubject(subject);
      mailMessage.setText(message);
