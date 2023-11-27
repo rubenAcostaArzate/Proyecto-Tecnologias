@@ -5,7 +5,6 @@ package fciencias.unam.inventario.demo.controller;
 
 import java.util.Properties;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -14,7 +13,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 /**
  * 
  */
-@Bean
+
 @Configuration
 public class MailConfiguration {
 
@@ -36,17 +35,20 @@ public class MailConfiguration {
       mailSender.setUsername("rubenacostaarzate@ciencias.unam.mx");
       /* Agregamos la contraseña del correo, en la vida real esto es muy mala practica porque 
        * dejamos nuestra contraseña a plena vista y pues eso seria una falla de seguridad tremenda
-       * pero para fines practicos de esta app academica lo dejamos asi
-       * mailSender.setPassword("Spino2000@");
-       */ 
+       * pero para fines practicos de esta app academica lo dejamos asi*/
+      mailSender.setPassword("Spino2000@");
+        
       Properties props=mailSender.getJavaMailProperties();
 
       //Agregamos propiedad que le dice que el protocolo que se usara sera el smtp
       props.put("mail.transport.protocol", "smtp");
+       props.put("mail.protocol", "smtp");
       //Agregamos propiedad que sirve para autenticar el correo y la contraseña dadas
       props.put("mail.smtp.auth","true");
       //Agregamos propiedad que cifra la comunicacion de los mensajes de los correos
       props.put("mail.smtp.starttls","true");
+       props.put("mail.smtp.starttls.enable","true");
+        props.put("mail.smtp.starttls.required","true");
       //Esta propiedad es simplemente para que se nos muestren los errores en consola
       props.put("mail.debug","true");
 

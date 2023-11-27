@@ -25,6 +25,18 @@ public class Mail {
     String subject;
 
     String message;
+
+    public String getToUser() {
+        return toUser;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public String getMessage() {
+        return message;
+    }
                     
     
     

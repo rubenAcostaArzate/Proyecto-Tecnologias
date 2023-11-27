@@ -97,6 +97,10 @@ public class Usuario {
     public String getCorreo(){
         return correo;
     }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
     
     
 

@@ -115,5 +115,48 @@ public class Producto {
         return tipoProducto;
     }
     
+    public void setComentarios(String comentarios){
+        this.comentarios=comentarios;
+    }
+    public void setTipoProducto(String tipoProducto){
+        this.tipoProducto=tipoProducto;
+    }
+
+    public void setStock(int stock){
+        this.stock=stock;
+    }
+
+    public void setNombreProducto(String nombreProducto){
+        this.nombreProducto=nombreProducto;
+    }
+
+    public void setCosto(float costo) {
+        this.costo = costo;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setFechaAdquision(LocalDate fechaAdquision) {
+        this.fechaAdquision = fechaAdquision;
+    }
+
+    public void setFechaCaducidad(LocalDate fechaCaducidad) {
+        this.fechaCaducidad = fechaCaducidad;
+    }
+
+    public void setMedida(String medida) {
+        this.medida = medida;
+    }
+
+    public void setIdProducto(long idProducto) {
+        this.idProducto = idProducto;
+    }
+
+    public void setNombreProveedor(String nombreProveedor) {
+        this.nombreProveedor = nombreProveedor;
+    }
+
     
 }
