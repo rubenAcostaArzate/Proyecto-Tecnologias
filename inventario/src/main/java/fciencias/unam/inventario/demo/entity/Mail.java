@@ -8,10 +8,11 @@ import java.util.regex.Pattern;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
-
+@ToString
 
 @Embeddable
 public class Mail {
@@ -19,33 +20,15 @@ public class Mail {
     /*Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                         + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");*/
 
-    String correo;  
+    String toUser;  
+
+    String subject;
+
+    String message;
                     
     
     
-    public Mail(String correo){
-        this.correo=correo;
-    } 
     
-    public Mail(){
-
-    }
-    /* 
-    @NotNull
-    public boolean esValido(){
-        Matcher mather = pattern.matcher(correo);
-        valido=mather.find();
-        
-        return valido;
-    }*/
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
  
     
 }

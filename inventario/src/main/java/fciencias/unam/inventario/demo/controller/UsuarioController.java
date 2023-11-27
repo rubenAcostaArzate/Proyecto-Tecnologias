@@ -1,12 +1,11 @@
 package fciencias.unam.inventario.demo.controller;
 import com.sun.jdi.connect.Transport;
+
 import java.io.UnsupportedEncodingException;
 import java.util.Properties;
 import org.aspectj.bridge.Message;
 import org.springframework.boot.web.servlet.server.Session;
-import javax.mail.internet.MimeMessage;
-import javax.mail.Message;
-import javax.mail.internet.InternetAddress;
+
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -22,15 +21,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import fciencias.unam.inventario.demo.entity.Usuario;
 import fciencias.unam.inventario.demo.repository.UsuarioRepository;
+import fciencias.unam.inventario.demo.service.JEmailService;
 import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioController {
 
-    EnviarCorreo enviarCorreo=new EnviarCorreo();
+    JEmailService emailService=new JEmailService();
     
     @Autowired
     private UsuarioRepository repo;
@@ -64,7 +65,8 @@ public class UsuarioController {
         }
 
         repo.save(usuario);
-        enviarCorreo.sendEmail(usuario.getCorreo(), enviarCorreo.mensaje);
+        emailService.sendEmail(usuario.getCorreo(),"USUARIO AGREGADO",
+         "FELICIDADES\n tu usuario ha sido agregado exitosamente en ensaladaCiencias");
         return "redirect:/usuario/";
     }
 
