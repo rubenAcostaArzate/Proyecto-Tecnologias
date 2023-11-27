@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="/sbadmin/css/styles.css" rel="stylesheet" />
+    
+  </head>
+  <body>
+
+    <header class="bg-dark d-flex justify-content-between align-items-center pt-1 pb-1 ps-3 pe-3">
+      <nav class="navbar">
+          <h2 class="display-6 text-white m-0 fuente-cursiva"><a class="text-white text-decoration-none" th:href="@{/}">EnsaladasCiencias</a></a>
+      </nav>
+      <p class="text-white m-0">Clientes</p>
+    </header>
+
+    <main class="pt-4 pb-4">
+      <h1 class="text-center mb-4">Menú</h1>
+
+      <div class="primera-receta rounded container p-4">
+        <h2>Ensalda Cesar</h2>
+        <p>Costo: <strong>$150</strong></p>
+        <img src="/sbadmin/img/ensalada_cesar.jpeg" alt="imagen de ensalada tipo cesar" 
+        class="mx-auto d-block rounded">
+        <p class="mt-4">
+          Es una ensalada de lechuga romana y croûtons con jugo de limón, aceite de oliva, huevo, salsa Worcestershire,
+          anchoas, ajo, mostaza de Dijon, queso parmesano y pimienta negra. La ensalada César original no contiene pollo,
+          aunque se le suele agregar habitualmente.
+        </p>
+      </div>
+
+      <div class="segunda-receta container rounded mt-5 p-4">
+        <h2>Ensalda Rusa</h2>
+          <p>Costo: <strong>$80</strong></p>
+          <img src="/sbadmin/img/ensalada_rusa.jpeg" alt="imagen de ensalada tipo rusa"
+          class="mx-auto d-block rounded">
+          <p class="mt-4">
+            Esta ensalada de papas y verduras con un aderezo de mayonesa es muy conocida en Rusia, por toda Europa y 
+            también en América del Sur.
+          </p>
+      </div>
+
+      <div class="primera-receta container rounded mt-5 p-4">
+        <h2>Ensalda Kartoffelsalat</h2>
+        <p>Costo: <strong>$120</strong></p>
+        <img src="/sbadmin/img/ensalada_Kartoffelsalat.jpeg" alt="imagen de ensalada tipo kartoffe"
+        class="mx-auto d-block rounded">
+        <p class="mt-4">
+          La Kartoffelsalat (en Austria denominada también Erdäpfelsalat) o ensalada de papas es uno de los platos más conocidos
+          en la cocina alemana. Se trata de un plato compuesto principalmente de varios tipos de papas cocidas acompañadas de 
+          diferentes ingredientes.
+        </p>
+      </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

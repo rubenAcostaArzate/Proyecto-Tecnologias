@@ -1,4 +1,12 @@
 package fciencias.unam.inventario.demo.controller;
+import com.sun.jdi.connect.Transport;
+import java.io.UnsupportedEncodingException;
+import java.util.Properties;
+import org.aspectj.bridge.Message;
+import org.springframework.boot.web.servlet.server.Session;
+import javax.mail.internet.MimeMessage;
+import javax.mail.Message;
+import javax.mail.internet.InternetAddress;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -21,6 +29,8 @@ import jakarta.validation.Valid;
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioController {
+
+    EnviarCorreo enviarCorreo=new EnviarCorreo();
     
     @Autowired
     private UsuarioRepository repo;
@@ -43,6 +53,8 @@ public class UsuarioController {
         return "usuario/formularioAgregarUsuario";
     }
 
+    
+
     @PostMapping("/formularioAgregarUsuario")
     public String procesandoAgregarUsuario(@Valid @ModelAttribute Usuario usuario, BindingResult result) {
 
@@ -52,6 +64,7 @@ public class UsuarioController {
         }
 
         repo.save(usuario);
+        enviarCorreo.sendEmail(usuario.getCorreo(), enviarCorreo.mensaje);
         return "redirect:/usuario/";
     }
 
