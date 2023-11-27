@@ -13,7 +13,7 @@ import fciencias.unam.inventario.demo.service.JEmailService;
 import jakarta.validation.Valid;
 
 @Controller
-@RequestMapping("/usuario")
+@RequestMapping("/correo")
 
 public class MailController {
 
@@ -22,14 +22,14 @@ public class MailController {
     @GetMapping("/enviarCorreo")
     public String agregaMail(Model model){
        model.addAttribute("correo", new Mail());
-       return "usuario/enviarCorreo";
+       return "correo/enviarCorreo";
     }
 
     @PostMapping("/enviarCorreo")
     public String enviarMensaje(@Valid @ModelAttribute Mail correo, BindingResult result){
         if (result.hasErrors()) {
             result.getAllErrors();
-            return "usuario/enviarCorreo";
+            return "correo/enviarCorreo";
         }
 
         emailService.sendEmail(correo.getToUser(), correo.getSubject(), correo.getMessage());

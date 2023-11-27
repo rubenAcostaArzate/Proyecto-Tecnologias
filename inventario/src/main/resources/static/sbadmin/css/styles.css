@@ -181,3 +181,9 @@ input[type="file"]::file-selector-button {
 .boton-menu-4 {
     background-color: #C8C5C0;
 }
+
+.modal-header{
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
