@@ -32,7 +32,7 @@ public class MailConfiguration {
        * mande confirmacion y ademas para el apartado dudas o sugerencias pues el correo sera cambiado por el 
        * que ingrese el usuario
        */
-      mailSender.setUsername("admin@ensaladasCiencias.com");
+      mailSender.setUsername("botjavatest@outlook.com");
       /* Agregamos la contraseña del correo, en la vida real esto es muy mala practica porque 
        * dejamos nuestra contraseña a plena vista y pues eso seria una falla de seguridad tremenda
        * pero para fines practicos de esta app academica lo dejamos asi*/
