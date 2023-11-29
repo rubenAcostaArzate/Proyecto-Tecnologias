@@ -139,13 +139,18 @@ input[type="file"]::file-selector-button {
 }
 
 .receta-boton {
+    display: flex;
     margin-right: 15%;
+}
+
+.agrega-usuarios {
+    display: flex;
+    margin-left: 55%;
 }
 
 .boton-regresa{
     display: flex;
-    justify-content: left;
-    margin-left: 15%;
+    margin-left: 0%;
 }
 
 .textarea-form {
@@ -186,4 +191,14 @@ input[type="file"]::file-selector-button {
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.form-group{
+    margin-left: 20%;
+    margin-right: 20%;
+    
+}
+
+.modal-footer{
+    margin-right: 20%;
 }

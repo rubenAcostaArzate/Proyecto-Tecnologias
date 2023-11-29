@@ -18,6 +18,12 @@ import jakarta.validation.Valid;
 public class MailController {
 
     private JEmailService emailService;
+    
+    @GetMapping("/")
+    public String index() {
+
+        return "correo/enviarCorreo";
+    }
 
     @GetMapping("/enviarCorreo")
     public String agregaMail(Model model){

@@ -20,7 +20,7 @@
   
       <div layout:fragment="main-header">
         <main class="pt-4 pb-4">
-            <h1 class="text-center">Escribe los datos del nuevo usuario</h1>
+            <h1 class="text-center">Escribe tu duda o problema</h1>
                   <!-- Modal Cabecera -->
                   <div class="modal-header">
                       
@@ -34,10 +34,8 @@
                   <div class="modal-body">
                       <p class="statusMsg"></p>
                       <form role="form">
-                          <div class="form-group">
-                              <label for="inputName">Nombre</label>
-                              <input type="text" class="form-control" id="inputName" placeholder="Ingrese su nombre"/>
-                          </div>
+                          
+                         
                           <div class="form-group">
                               <label for="inputEmail">Email</label>
                               <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese su email"/>
@@ -47,17 +45,18 @@
                               <textarea class="form-control" id="inputMessage" placeholder="Ingrese su mensaje"></textarea>
                           </div>
                       </form>
-                  </div>
+                 
                   
                   <!-- Modal Pie de Página -->
                   <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Regresar</button>
-                      <button type="button" class="btn btn-primary submitBtn" th:href="@{/}" onclick="EnviarFormulario()">Enviar correo</button>
+                      <a class="btn btn-default" data-dismiss="modal" th:href="@{/usuario/}">Regresar</a>
+                      <a class="btn btn-primary submitBtn" th:href="@{/usuario/}" >Enviar correo</a>
+                 </div>
                   </div>
               </div>
       
     
-
+              
     <header></header>
     <main></main>
     <footer></footer>

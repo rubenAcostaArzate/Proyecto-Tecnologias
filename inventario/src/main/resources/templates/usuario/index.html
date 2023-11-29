@@ -51,17 +51,20 @@
         </table>
       </div>
 
-      <div class="d-flex justify-content-end mt-5 receta-boton">
+      <div class="d-flex justify-content-center bg-gradient mt-5 ">
+
+        <div class="d-flex justify-content-sm-start bg-gradient mt-5 boton-regresa">
+          <a class="btn btn-danger" th:href="@{/}">Regresar al menu</a>
+        </div>
+
+      <div class="d-flex justify-content-end mt-5 agrega-usuarios">
         <a class="btn btn-success ps-4 pe-4" th:href="@{/usuario/formularioAgregarUsuario}">Agregar usuario</a>
       </div>
-
-
-      <div class="d-flex justify-content-start mt-5 boton-regesa">
-        <a class="btn btn-danger" th:href="@{/}">Regresar al menu</a>
-      </div>
       
+     
+    </div>
       <div class="d-flex justify-content-end mt-5 receta-boton">
-        <button type="submit" class="btn btn-success" th:href="@{/correo/enviarCorreo}">Enviar correo</button>
+        <a class="btn btn-default" th:href="@{/correo/enviarCorreo}">¿tienes alguna duda o sugerencia?</a>
       </div>
 
     </main>
