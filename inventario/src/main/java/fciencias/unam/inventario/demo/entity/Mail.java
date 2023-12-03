@@ -1,11 +1,13 @@
 package fciencias.unam.inventario.demo.entity;
 
-import jakarta.persistence.Embeddable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,19 +15,23 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+@Entity
+@Data
 
-@Embeddable
 public class Mail {
+  
+    @Id
+    int id;
+
     
-    /*Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                        + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");*/
-
-    String toUser;  
-
-    String subject;
-
-    String message;
-
+    @Email
+    @NotNull
+    public String toUser;  
+    @NotNull
+    public String subject;
+    @NotNull
+    public String message;
+    
     public String getToUser() {
         return toUser;
     }

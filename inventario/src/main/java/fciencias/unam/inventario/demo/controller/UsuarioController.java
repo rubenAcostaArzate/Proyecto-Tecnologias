@@ -1,12 +1,4 @@
 package fciencias.unam.inventario.demo.controller;
-import com.sun.jdi.connect.Transport;
-
-import java.io.UnsupportedEncodingException;
-import java.util.Properties;
-import org.aspectj.bridge.Message;
-import org.springframework.boot.web.servlet.server.Session;
-
-
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 
 import fciencias.unam.inventario.demo.entity.Usuario;
 import fciencias.unam.inventario.demo.repository.UsuarioRepository;

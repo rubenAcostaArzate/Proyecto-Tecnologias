@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="es"
-    xmlns:th="http://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-  <head>
-    <meta charset="utf-8">
-   
-    <title>correo</title> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="/sbadmin/css/styles.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header class="bg-dark d-flex justify-content-between align-items-center pt-1 pb-1 ps-3 pe-3">
-        <nav class="navbar">
-          <h2 class="display-6 text-white m-0 fuente-cursiva"><a class="text-white text-decoration-none" th:href="@{/}">EnsaladasCiencias</a></a>
-        </nav>
-        <p class="text-white m-0">Administrador</p>
-      </header>
+<head>
+  <meta charset="utf-8">
   
-      <div layout:fragment="main-header">
-        <main class="pt-4 pb-4">
-            <h1 class="text-center">Escribe tu duda o problema</h1>
-                  <!-- Modal Cabecera -->
-                  <div class="modal-header">
-                      
-                    
-                          
-                      </button>
-                      
-                  </div>
-                  
-                  <!-- Modal Cuerpo contenido -->
-                  <div class="modal-body">
-                      <p class="statusMsg"></p>
-                      <form role="form">
-                          
-                         
-                          <div class="form-group">
-                              <label for="inputEmail">Email</label>
-                              <input type="email" class="form-control" id="inputEmail" placeholder="Ingrese su email"/>
-                          </div>
-                          <div class="form-group">
-                              <label for="inputMessage">Mensaje</label>
-                              <textarea class="form-control" id="inputMessage" placeholder="Ingrese su mensaje"></textarea>
-                          </div>
-                      </form>
-                 
-                  
-                  <!-- Modal Pie de Página -->
-                  <div class="modal-footer">
-                      <a class="btn btn-default" data-dismiss="modal" th:href="@{/usuario/}">Regresar</a>
-                      <a class="btn btn-primary submitBtn" th:href="@{/usuario/}" >Enviar correo</a>
-                 </div>
-                  </div>
-              </div>
-      
+  <title>correo</title> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="/sbadmin/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+  <header class="bg-dark d-flex justify-content-between align-items-center pt-1 pb-1 ps-3 pe-3">
+    <nav class="navbar">
+      <h2 class="display-6 text-white m-0 fuente-cursiva"><a class="text-white text-decoration-none" th:href="@{/inicio}">EnsaladasCiencias</a></a>
+      </nav>
+      <p class="text-white m-0">Administrador</p>
+    </header>
     
+    <div layout:fragment="main-header">
+      <main class="pt-4 pb-4">
+        <h1 class="text-center">Escribe tu duda o problema</h1>
+        
+        <!-- Modal Cuerpo contenido -->
+        <div class="modal-body">
+          <p class="statusMsg"></p>
+          <form th:action="@{/correo/enviarCorreo}" role="form" method="POST" th:object="${correo}">
+            
+            <div class="form-group">
+              <label for="inputAsunto">Asunto</label>
+              <input type="text" class="form-control" id="inputAsunto" name="inputAsunto" required th:field="*{subject}" placeholder="Ingrese su asunto"/>
+            </div>
+            
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail" name="inputEmail" required th:field="*{toUser}" placeholder="Ingrese su email"/>
+              <span class="text-danger" th:if="${#fields.hasErrors('toUser')}" th:errors="*{toUser}">Name Error</span>
+            </div>
+            
+            <div class="form-group">
+              <label for="inputMessage">Mensaje</label>
+              <textarea class="form-control" id="inputMessage" name="inputMessage" required th:field="*{message}" placeholder="Ingrese su mensaje"></textarea>
+            </div>
+            
+            <!-- 
               
-    <header></header>
-    <main></main>
-    <footer></footer>
-  </body>
-</html>
+              <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail" name="inputEmail"  placeholder="Ingrese su email"/>
+                <span class="text-danger" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}">Name Error</span>
+              </div>
+              
+              <div class="form-group">
+                <label for="inputMessage">Mensaje</label>
+                <textarea class="form-control" id="inputMessage" name="inputMessage"  placeholder="Ingrese su mensaje"></textarea>
+              </div>
+              
+            -->
+            
+            <div class="modal-footer">
+              <a class="btn btn-default" data-dismiss="modal" th:href="@{/usuario/}">Regresar</a>
+              <button type="submit" class="btn btn-primary submitBtn">Enviar correo</button>
+            </div>
+
+          </form>
+          <!-- Modal Pie de Página -->
+         
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      </div>
+      
+      
+      
+      <header></header>
+      <main></main>
+      
+      <footer></footer>
+    </body>
+    </html>
+    

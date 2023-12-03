@@ -1,5 +1,6 @@
 package fciencias.unam.inventario.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,29 +17,36 @@ import jakarta.validation.Valid;
 @RequestMapping("/correo")
 
 public class MailController {
-
+    
+    @Autowired
     private JEmailService emailService;
     
-    @GetMapping("/")
-    public String index() {
-
-        return "correo/enviarCorreo";
-    }
-
     @GetMapping("/enviarCorreo")
-    public String agregaMail(Model model){
+    public String enviarMensaje(Model model){
+
        model.addAttribute("correo", new Mail());
+      // System.out.println(model);
        return "correo/enviarCorreo";
     }
-
+     
     @PostMapping("/enviarCorreo")
-    public String enviarMensaje(@Valid @ModelAttribute Mail correo, BindingResult result){
+    public String procesandoEnviarMensaje(@Valid @ModelAttribute Mail correo,BindingResult result ) {
+        
         if (result.hasErrors()) {
             result.getAllErrors();
+           
             return "correo/enviarCorreo";
         }
-
-        emailService.sendEmail(correo.getToUser(), correo.getSubject(), correo.getMessage());
+        
+        emailService.sendEmail2(correo.getToUser(),correo.getSubject(), correo.getMessage());
         return "redirect:/usuario/";
     }
+    /* 
+     
+    @PostMapping("/enviarCorreo")
+    public String enviarMensaje(@RequestParam("inputEmail") String correo, @RequestParam("inputMessage") String mensaje) {
+       emailService.sendEmail(correo, "DUDA", mensaje);
+       return "redirect:/usuario/";
+    }
+    */
 }
