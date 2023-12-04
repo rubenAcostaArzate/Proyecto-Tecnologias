@@ -25,7 +25,7 @@ public class MailController {
     public String enviarMensaje(Model model){
 
        model.addAttribute("correo", new Mail());
-      // System.out.println(model);
+     
        return "correo/enviarCorreo";
     }
      
@@ -41,12 +41,5 @@ public class MailController {
         emailService.sendEmail2(correo.getToUser(),correo.getSubject(), correo.getMessage());
         return "redirect:/usuario/";
     }
-    /* 
-     
-    @PostMapping("/enviarCorreo")
-    public String enviarMensaje(@RequestParam("inputEmail") String correo, @RequestParam("inputMessage") String mensaje) {
-       emailService.sendEmail(correo, "DUDA", mensaje);
-       return "redirect:/usuario/";
-    }
-    */
+    
 }

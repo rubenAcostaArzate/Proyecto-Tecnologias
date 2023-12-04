@@ -23,7 +23,6 @@ public class JEmailService {
      mailMessage.setSubject(subject);
      mailMessage.setText(message);
     
-
      mailSender.send(mailMessage);
      
     }

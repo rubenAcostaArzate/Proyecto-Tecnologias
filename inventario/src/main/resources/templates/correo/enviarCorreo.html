@@ -35,28 +35,12 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
             <div class="form-group">
               <label for="inputEmail">Email</label>
               <input type="email" class="form-control" id="inputEmail" name="inputEmail" required th:field="*{toUser}" placeholder="Ingrese su email"/>
-              <span class="text-danger" th:if="${#fields.hasErrors('toUser')}" th:errors="*{toUser}">Name Error</span>
             </div>
             
             <div class="form-group">
               <label for="inputMessage">Mensaje</label>
               <textarea class="form-control" id="inputMessage" name="inputMessage" required th:field="*{message}" placeholder="Ingrese su mensaje"></textarea>
             </div>
-            
-            <!-- 
-              
-              <div class="form-group">
-                <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" id="inputEmail" name="inputEmail"  placeholder="Ingrese su email"/>
-                <span class="text-danger" th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}">Name Error</span>
-              </div>
-              
-              <div class="form-group">
-                <label for="inputMessage">Mensaje</label>
-                <textarea class="form-control" id="inputMessage" name="inputMessage"  placeholder="Ingrese su mensaje"></textarea>
-              </div>
-              
-            -->
             
             <div class="modal-footer">
               <a class="btn btn-default" data-dismiss="modal" th:href="@{/usuario/}">Regresar</a>
